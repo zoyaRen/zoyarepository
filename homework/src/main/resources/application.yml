@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    password: 1127cb56
+    username: root
+    url: jdbc:mysql:///spring?serverTimezone=GMT
+    driver-class-name: com.mysql.jdbc.Driver
+
+  mvc:
+    date-format: yyyy-MM-dd
+
+  thymeleaf:
+    cache: false
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+

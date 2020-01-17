@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="vue.js" type="text/javascript" charset="utf-8"></script>
+    <script src="bootstrap.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="bootstrap.min.css"/>
+    <script src="bootstrap-table/bootstrap-table.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="bootstrap-table/bootstrap-table.css"/>
+    <script src="bootstrap-table/locale/bootstrap-table-zh-CN.js" type="text/javascript" ></script>
+
+</head>
+<body>
+<div id="app">
+    <div id="toolbar"  v-show="showList">
+        <button class="btn btn-success" @click="add">新增</button>
+        <button class="btn btn-primary" @click="update">修改</button>
+        <button class="btn btn-danger" @click="del">删除</button>
+    </div>
+    <div v-show="showList">
+        <table id="table" >
+        </table>
+    </div>
+    <div v-show="!showList">
+        <div class="panel panel-default">
+            <div  class="panel-heading">{{title}}</div>
+            <form class="form-horizontal">
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >标题</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.title" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >副标题</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.subTitle" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >品牌名</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.brandId" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >分类名1</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.cid1" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >分类名2</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.cid2" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >分类名3</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.cid3" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >是否可售</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.saleable" type="text"></div>
+                </div>
+                <div  class="form-group">
+                    <div class="col-sm-2 control-label" >是否有效</div>
+                    <div class="col-sm-10"><input   class="form-control"  v-model="sup.valid" type="text"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2 control-label"></div>
+                    <input type="button" class="btn btn-primary" @click="modify" value="确定"/>
+                    <input type="button" class="btn btn-warning" @click="refresh" value="返回"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="sup.js" ></script>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>商品管理</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!--<link rel="stylesheet" href="bootstrap.min.css">-->
+<link rel="stylesheet" href="font-awesome.min.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="ztree/css/metroStyle/metroStyle.css">
+<link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+<div id="dtapp" v-cloak>
+aaaaaaaaaaa
+    <div v-show="showList">
+        <div id="toolbar">
+            <button  class="btn btn-success " type="button" @click="add">
+                <i class="fa fa-plus"></i>&nbsp;&nbsp;<span class="bold">新增</span>
+            </button>
+            <button class="btn btn-success " type="button" @click="update">
+                <i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;<span class="bold">修改</span>
+            </button>
+            <button  class="btn btn-danger " type="button" @click="del">
+                <i class="fa fa-remove"></i>&nbsp;&nbsp;<span class="bold">删除</span>
+            </button>
+        </div>
+
+        <!--展示菜单列表--->
+        <table id="table"></table>
+    </div>
+
+    <!-- -->
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+
+            <div class="form-group">
+                <div class="col-sm-2 control-label">标题</div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" v-model="sup.title" placeholder="标题"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 control-label">副标题</div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" v-model="sup.subTitle" placeholder="副标题"/>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-2 control-label">品牌</div>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" v-model="sup.brandId" placeholder="品牌"/>
+                </div>
+            </div>
+            <div  class="form-group">
+                <div class="col-sm-2 control-label">分类</div>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" v-model="sup.cname" placeholder="分类"/>
+                </div>
+            </div>
+            <div  class="form-group">
+                <div class="col-sm-2 control-label">是否可售</div>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" v-model="sup.saleable" placeholder="是否可售"/>
+                </div>
+            </div>
+            <div  class="form-group">
+                <div class="col-sm-2 control-label">是否有效</div>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" v-model="sup.valid" placeholder="是否有效"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+
+                <input type="button" class="btn btn-primary" @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+
+<script src="jquery-1.4.1.js"></script>
+<script src="layer/layer.js"></script>
+<script src="bootstrap.min.css"></script>
+<script src="vue.js"></script>
+<script src="bootstrap-table/bootstrap-table.min.js"></script>
+<script src="bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="ztree/jquery.ztree.all.min.js"></script>
+<script src="common.js"></script>
+<script src="user.js"></script>
+</body>
+</html>
